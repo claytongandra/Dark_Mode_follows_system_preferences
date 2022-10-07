@@ -153,7 +153,7 @@
       .image img {
         display: block;
         height: auto;
-        width: 100%;
+        width: 50%;
       }
     </style>
     <link
@@ -275,20 +275,24 @@
           color setting for apps on your system.
           <figure id="imageResult" class="image" style="display: block">
             <img
-              id="base64ImageForDisplay"
+              id="imageForDisplayDark"
               title="Displayed Image"
-              src=""
+              src="https://raw.githubusercontent.com/claytongandra/Dark_Mode_follows_system_preferences/main/assets/images/home/config-dark-mode.png"
               style="max-height: 1080px; display: block"
               alt="Image Preview"
             />
           </figure>
         </div>
-        <a class="btn btn-lg btn-primary" href="#" role="button" target="_blank"
-          >View »</a
+        <button
+          type="button"
+          class="btn btn-lg btn-primary"
+          href="#"
+          role="button"
+          id="reset-to-system-setup"
+          style="display: none"
         >
-        <a class="btn btn-lg btn-primary" href="#" role="button" target="_blank"
-          >View »</a
-        >
+          Reset to System Setup
+        </button>
       </div>
     </main>
     <script type="module" src="script.js"></script>
@@ -306,6 +310,7 @@
 </html>
 
 <script>
-  const btnResetToSystemSetup = document.querySelector('#reset-to-system-setup'); 
-
+  const btnResetToSystemSetup = document.querySelector(
+    '#reset-to-system-setup'
+  );
 </script>

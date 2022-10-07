@@ -148,6 +148,7 @@
 
       .image {
         margin-top: 15px;
+    
       }
 
       .image img {
@@ -241,8 +242,8 @@
               aria-expanded="false"
             >
               <img
-                src="https://github.com/mdo.png"
-                alt="mdo"
+                src="https://avatars.githubusercontent.com/u/695924?s=96&v=4"
+                alt="me"
                 width="32"
                 height="32"
                 class="rounded-circle"
@@ -273,11 +274,20 @@
         <div class="alert alert-warning" role="alert">
           Before switching to light/dark mode on the switch. Try changing the
           color setting for apps on your system.
-          <figure id="imageResult" class="image" style="display: block">
+          <figure id="imageResultDark" class="image" style="display: block">
             <img
               id="imageForDisplayDark"
               title="Displayed Image"
               src="https://raw.githubusercontent.com/claytongandra/Dark_Mode_follows_system_preferences/main/assets/images/home/config-dark-mode.png"
+              style="max-height: 1080px; display: block"
+              alt="Image Preview"
+            />
+          </figure>
+          <figure id="imageResultLight" class="image" style="display: block">
+            <img
+              id="imageForDisplayLight"
+              title="Displayed Image"
+              src="https://cdn.jsdelivr.net/gh/claytongandra/Dark_Mode_follows_system_preferences@main/assets/images/home/config-ligth-mode.png"
               style="max-height: 1080px; display: block"
               alt="Image Preview"
             />
@@ -308,9 +318,3 @@
     ></script>
   </body>
 </html>
-
-<script>
-  const btnResetToSystemSetup = document.querySelector(
-    '#reset-to-system-setup'
-  );
-</script>

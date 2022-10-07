@@ -9,6 +9,18 @@
       Remove all code in `styles.css`!
     -->
     <!-- CSS only -->
+  <style>
+    .image {
+      margin-top: 15px;
+    }
+
+    .image img {
+      display: block;
+      height: auto;
+      margin: 0px auto;
+      width: 80%;
+    }
+  </style>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="styles.css" />
@@ -66,7 +78,32 @@
   
 <div class="hero p-5 rounded">
   <h1><i class="bi bi-sun"></i> Dark Mode follows system preferences <i class="bi bi-moon-stars"></i></h1>
-  <p class="lead">This example is a quick exercise to illustrate how fixed to top navbar works. As you scroll, it will remain fixed to the top of your browser’s viewport.</p>
+  <p class="lead">
+  This example is a quick exercise to illustrate the light/dark mode
+  toggle on the page or identify the OS configuration.
+</p>
+<div class="alert alert-warning" role="alert">
+  Before switching to light/dark mode on the switch. Try changing the
+  color setting for apps on your system.
+  <figure id="imageResultDark" class="image" style="display: block">
+    <img
+      id="imageForDisplayDark"
+      title="Displayed Image"
+      src="https://cdn.jsdelivr.net/gh/claytongandra/Dark_Mode_follows_system_preferences@main/assets/images/home/config-dark-mode.png"
+      style="max-height: 580px; display: none"
+      alt="Image Preview"
+    />
+  </figure>
+  <figure id="imageResultLight" class="image" style="display: block">
+    <img
+      id="imageForDisplayLight"
+      title="Displayed Image"
+      src="https://cdn.jsdelivr.net/gh/claytongandra/Dark_Mode_follows_system_preferences@main/assets/images/home/config-ligth-mode.png"
+      style="max-height: 580px; display: block"
+      alt="Image Preview"
+    />
+  </figure>
+</div>
   <button
           type="button"
           class="btn btn-lg btn-primary"

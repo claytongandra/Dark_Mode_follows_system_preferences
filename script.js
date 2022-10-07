@@ -4,6 +4,9 @@ let darkMode = localStorage.getItem('appColorScheme');
 const darkModeToggle = document.querySelector('#dark-mode-toggle');
 const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
 
+const imageForDisplayLight = document.getElementById('imageForDisplayLight');
+const imageForDisplayDark = document.getElementById('imageForDisplayDark');
+
 window
   .matchMedia('(prefers-color-scheme: dark)')
   .addEventListener('change', function (e) {
@@ -21,6 +24,9 @@ const enableDarkMode = () => {
   document.body.classList.add('darkmode');
   // 2. Update darkMode in localStorage
   localStorage.setItem('appColorScheme', 'dark');
+
+  imageForDisplayLight.style.display = 'none';
+  imageForDisplayDark.style.display = 'block';
 };
 
 const disableDarkMode = () => {
@@ -28,6 +34,9 @@ const disableDarkMode = () => {
   document.body.classList.remove('darkmode');
   // 2. Update darkMode in localStorage
   localStorage.setItem('appColorScheme', 'light');
+
+  imageForDisplayDark.style.display = 'none';
+  imageForDisplayLight.style.display = 'block';
 };
 
 //alert(prefersDarkScheme.matches);
@@ -40,6 +49,9 @@ if (darkMode === 'dark') {
 if (prefersDarkScheme.matches && darkMode == null) {
   document.body.classList.add('darkmode');
   darkModeToggle.checked = true;
+
+  imageForDisplayLight.style.display = 'none';
+  imageForDisplayDark.style.display = 'block';
 }
 
 // When someone clicks the button

@@ -7,6 +7,16 @@ const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
 const imageForDisplayLight = document.getElementById('imageForDisplayLight');
 const imageForDisplayDark = document.getElementById('imageForDisplayDark');
 
+const toggleImageDisplaySetting = (prmIsDark) => {
+  if (prmIsDark) {
+    imageForDisplayLight.style.display = 'none';
+    imageForDisplayDark.style.display = 'block';
+  } else {
+    imageForDisplayDark.style.display = 'none';
+    imageForDisplayLight.style.display = 'block';
+  }
+};
+
 window
   .matchMedia('(prefers-color-scheme: dark)')
   .addEventListener('change', function (e) {
@@ -16,6 +26,8 @@ window
         : document.body.classList.remove('darkmode');
 
       darkModeToggle.checked = e.matches;
+
+      toggleImageDisplaySetting(e.matches);
     }
   });
 
@@ -25,8 +37,7 @@ const enableDarkMode = () => {
   // 2. Update darkMode in localStorage
   localStorage.setItem('appColorScheme', 'dark');
 
-  imageForDisplayLight.style.display = 'none';
-  imageForDisplayDark.style.display = 'block';
+  toggleImageDisplaySetting(true);
 };
 
 const disableDarkMode = () => {
@@ -35,8 +46,7 @@ const disableDarkMode = () => {
   // 2. Update darkMode in localStorage
   localStorage.setItem('appColorScheme', 'light');
 
-  imageForDisplayDark.style.display = 'none';
-  imageForDisplayLight.style.display = 'block';
+  toggleImageDisplaySetting(false);
 };
 
 //alert(prefersDarkScheme.matches);
@@ -50,8 +60,9 @@ if (prefersDarkScheme.matches && darkMode == null) {
   document.body.classList.add('darkmode');
   darkModeToggle.checked = true;
 
-  imageForDisplayLight.style.display = 'none';
-  imageForDisplayDark.style.display = 'block';
+  toggleImageDisplaySetting(true);
+  //imageForDisplayLight.style.display = 'none';
+  //imageForDisplayDark.style.display = 'block';
 }
 
 // When someone clicks the button

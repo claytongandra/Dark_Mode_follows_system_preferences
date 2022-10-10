@@ -24,12 +24,12 @@
 
         transition: box-shadow 0.3s, border-color 0.3s;
 
-        display: flex;
+        display: inline-flex;
         position: relative;
         overflow: hidden;
         z-index: 1;
-
-        width: 85px;
+        min-width: 85px;
+        max-width: 85px;
         height: 30px;
         border: 2px solid #ccc;
         border-radius: 24px;
@@ -94,6 +94,7 @@
       .switch__label--dark,
       .switch__label--light {
         font-size: 0.7em !important;
+        margin:0 10px;
       }
 
       .checkbox:checked + .switch > .switch__label--light {
@@ -232,9 +233,10 @@
               <i class="moon moon-icon fa-regular fa-moon"></i>
             </div>
 
-            <span class="switch__label--light">Light</span
+            <span class="switch__label--light "><span class="d-sm-none d-md-block">Claro</span
+              ></span
             ><!--Light --><!-- Claro -->
-            <span class="switch__label--dark">Dark</span
+            <span class="switch__label--dark"><span class="d-sm-none d-md-block">Escuro<span></span
             ><!--Dark --><!-- Escuro -->
           </label>
 
